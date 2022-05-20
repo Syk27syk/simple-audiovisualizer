@@ -23,8 +23,11 @@ let size = [];
 // AUDIOVISUALIZER - load song works
 var song = new Audio('/on_good_terms.mp3')
 song.play();
-
 //this doesn't work -- p5.SoundFile = '/on_good_terms.mp3'
+
+function preload() {
+    img = loadImage('/bg.jpg')
+}
 
 // -----------------------------------------------------------------------//
 
