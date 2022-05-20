@@ -1,4 +1,9 @@
+// TEST BALLS
+let aPos = 0;
+let aSpeed = 5;
+
 // BOUNCING BALLS - defining variables
+
 let ballCount = 100;
 let x = [];
 let y = [];
@@ -8,6 +13,7 @@ let r = [];
 let g = [];
 let b = [];
 let size = [];
+
 
 // AUDIOVISUALIZER - load song works
 var song = new Audio('/on_good_terms.mp3')
@@ -20,6 +26,7 @@ song.play();
 function setup() {
     getAudioContext().suspend();
     createCanvas(windowWidth, windowHeight);
+    frameRate(60);
 
     //BOUNCING BALLS
     /*Create a for loop that iterates through i until it reaches the ball count value
@@ -28,7 +35,7 @@ function setup() {
     set the speeds to be random
     set the size to be random
     set the colors to be random
-    */
+    TRANSFERRED CODE TO DRAW
     for(let i = 0; i < ballCount; i++) {
         x[i] = width / 2;
         y[i] = height / 2;
@@ -39,11 +46,11 @@ function setup() {
         g[i] = random(0, 256);
         b[i] = random(0, 256);
     }
+    */
     
     // AUDIOVISUALIZER
     // fast fourier transform object to return array of values for each point of time analyzed
     //fft = new p5.FFT()
-
 
 }
 
@@ -55,7 +62,10 @@ function draw() {
     fill('blue')
     ellipse(width/2, height/2, 150,150)
     fill('#FF8C00')
-    ellipse(width/2, height/2, 100,100)
+    let aPos = 0;
+    let aSpeed = 5;
+    ellipse(width/2, aPos, 100,100)
+    aPos = aPos + aSpeed
 
     // BOUNCING BALLS
     /*Iterate through a new for loop to change the properties in order to animate the balls
@@ -65,8 +75,8 @@ function draw() {
     - set random R, G, B values; style to have no strokes;
     - draw balls
     */
+    let ballCount = 100;
     for(let i = 0; i < ballCount; i++) {
-        let ballCount = 100;
         let x = [];
         let y = [];
         let xSpeed = [];
@@ -80,13 +90,13 @@ function draw() {
 
         x[i] = width / 2;
         y[i] = height / 2;
-        xSpeed[i] = random(-5,5);
-        ySpeed[i] = random(-5,5);
+        xSpeed[i] = random(-5,20);
+        ySpeed[i] = random(-5,20);
         size[i] = random(10,50);
         r[i] = random(0, 256);
         g[i] = random(0, 256);
         b[i] = random(0, 256);
-        
+
         //
         x[i] += xSpeed[i];
         y[i] += ySpeed[i];
@@ -100,6 +110,7 @@ function draw() {
         noStroke();
         ellipse(x[i], y[i], size[i], size[i]);
     }
+    // the code is not the problem. p5js draw should be refreshing 60fps and it's not. 
 
   // AUDIOVISUALIZER
     // create variable to store waveform data from fft. calling fft.waveform returns an array with 1024 elements in chrome dev tools
