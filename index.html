@@ -4,12 +4,45 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>HTML 5 Boilerplate</title>
+        <title>simple-audiovisualizer with p5js</title>
         <link rel="stylesheet" href="style.css">
+        <script src="/script.js" defer></script>
     </head>
     <body>
-        <canvas></canvas>
+        <canvas id="canvas" width="viewport" height ="viewport">
+            <style>
+                #canvas {
+                    background-color: rgb(0,0,0);
+                }
+            </style>
+        </canvas>
         <h1 class="mx-auto"> Hello World </h1>
-        <script src="index.js"></script>
+        <script src="/script.js"></script>
     </body>
 </html>
+
+<script>
+var song
+
+function preload() {
+    song = loadSound('/ongoodterms.mp3')
+}
+
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+
+}
+
+function draw() {
+    background(0)
+
+}
+
+function mouseClicked() {
+    if (song.isPlaying()) {
+        song.pause()
+    } else {
+        song.play()
+    }
+}
+</script>
