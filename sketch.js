@@ -20,13 +20,15 @@ song.play();
 // preload doesn't work.
 //this doesn't work -- p5.SoundFile = '/on_good_terms.mp3'
 
-
 var img = new Image('/bg.jpg')
 /*this doesn't work
 function preload() {
     img = loadImage('/bg.jpg')
 }
 */
+
+// AUDIOVISUALIZER -PARTICLES
+var particles = []
 
 // -----------------------------------------------------------------------//
 
@@ -178,7 +180,13 @@ function draw() {
     */
 
     // AUDIOVISUALIZER - PARTICLES
+    var p = new Particle()
+    particles.push(p)
 
+    for (var i = 0; i < particles.length; i++) {
+        particles[i].update()
+        particles[i].show()
+    }
 
 }
 
@@ -195,3 +203,21 @@ function mousePressed() {
     }
 }
 
+// AUDIOVISUALIZER - PARTICLE OBJECTS
+class Particle {
+    constructor() {
+        this.pos = p5.Vector.random2D().mult(250)
+        this.vel = createVector(0,0)
+        this.acc = this.pos.copy().mult(random(0.0001, 0.00001))
+        this.w = random(3,5)
+    }
+    update() {
+        this.vel.add(this.acc)
+        this.pos.add(this.vel)
+    }
+    show() {
+        noStroke()
+        fill(255)
+        ellipse(this.pos.x, this.pos.y, 4, this.w)
+    }
+}
