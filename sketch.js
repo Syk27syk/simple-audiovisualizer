@@ -23,6 +23,7 @@ let size = [];
 // AUDIOVISUALIZER - load song works
 var song = new Audio('/on_good_terms.mp3')
 song.play();
+
 //this doesn't work -- p5.SoundFile = '/on_good_terms.mp3'
 
 // -----------------------------------------------------------------------//
@@ -124,6 +125,7 @@ function draw() {
     translate(width / 2, height / 2)
     var wave = fft.waveform()
 
+    // I used m and n instead of x and y because x and y have been used by bouncing balls. 
     // the first line is only for the full circle
     for (var t = -1; t <= 1; t +=2) {
         beginShape()
@@ -131,26 +133,26 @@ function draw() {
         for (var i = 0; i <= 180; i += 0.5) {
             var index = floor(map(i, 0, 180, 0, wave.length -1))
             var r = map(wave[index], -1, 1, 150, 350)
-            var x = r + sin(i) * t
-            var y = r + cos(i)
-            vertex (x,y)
+            var m = r + sin(i) * t
+            var n = r + cos(i)
+            vertex (m,n)
         }
         endShape()
     }
     /* this is for a line waveform: 
     for (var i = 0; i < width; i++) {
         var index = floor(map(i, 0, width, 0, wave.length))
-        var x = i
-        var y = wave[index] * 300 + height / 2
-        point (x,y)
+        var m = i
+        var n = wave[index] * 300 + height / 2
+        point (m,n)
     */
     /*The following is the semicircle, it should be in degrees, not radians. 
     for (var i = 0; i <= 180; i++) {
         var index = floor(map(i, 0, 180, 0, wave.length -1))
         var r = map(wave[index], -1, 1, 150, 350)
-        var x = r + sin(i)
-        var y = r + cos(i)
-        vertex (x,y)
+        var m = r + sin(i)
+        var n = r + cos(i)
+        vertex (m,n)
     }
     endShape()
     */
@@ -159,9 +161,9 @@ function draw() {
      for (var i = 0; i <= 180; i++) {
         var index = floor(map(i, 0, 180, 0, wave.length -1))
         var r = map(wave[index], -1, 1, 150, 350)
-        var x = r + -sin(i)
-        var y = r + cos(i)
-        vertex (x,y)
+        var m = r + -sin(i)
+        var n = r + cos(i)
+        vertex (m,n)
     }
     endShape()
     */
