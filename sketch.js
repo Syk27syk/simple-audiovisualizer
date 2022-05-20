@@ -6,7 +6,7 @@ window.onload = function () {
 var song
 
 function preload() {
-    song = loadSound('/ongoodterms.mp3')
+    song = new Audio('/on_good_terms.mp3')
 }
 
 // p5js function setup
