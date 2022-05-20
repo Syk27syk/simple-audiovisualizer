@@ -1,12 +1,4 @@
-// this doesn't work but nevermind
-/*
-window.onload = function () {
-    console.log="script file loaded"
-}
-*/
-
-// load song
-var song = new Audio('/on_good_terms.mp3')
+const song = new Audio('/on_good_terms.mp3')
 
 //this doesn't work -- p5.SoundFile = '/on_good_terms.mp3'
 
