@@ -1,15 +1,13 @@
+// this doesn't work but nevermind
+/*
 window.onload = function () {
     console.log="script file loaded"
 }
-
-/*
-// load song
-var song
-
-function preload() {
-    song = new Audio('/on_good_terms.mp3')
-}
 */
+
+// load song
+var song = new Audio('/on_good_terms.mp3')
+song.play();
 
 // p5js function setup
 function setup() {
@@ -36,7 +34,7 @@ function draw() {
        //point (x,y)
     }
 }
-
+*/
 // play song
 function mouseClicked() {
     if (song.isPlaying()) {
@@ -45,4 +43,4 @@ function mouseClicked() {
         song.play()
     }
 }
-*/
+
