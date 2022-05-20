@@ -1,9 +1,10 @@
+const { ImageBitmapLoader } = require("three");
+
 // TEST BALLS
 let aPos = 0;
 let aSpeed = 5;
 
 // BOUNCING BALLS - defining variables
-
 let ballCount = 100;
 let x = [];
 let y = [];
@@ -18,11 +19,16 @@ let ballSize = [];
 // AUDIOVISUALIZER - load song works
 var song = new Audio('/on_good_terms.mp3')
 song.play();
+// preload doesn't work.
 //this doesn't work -- p5.SoundFile = '/on_good_terms.mp3'
 
+
+var img = new Image('/bg.jpg')
+/*this doesn't work
 function preload() {
     img = loadImage('/bg.jpg')
 }
+*/
 
 // -----------------------------------------------------------------------//
 
@@ -31,7 +37,9 @@ function setup() {
     getAudioContext().suspend();
     createCanvas(windowWidth, windowHeight);
     frameRate(60);
-
+    angleMode(DEGREES);
+    imageMode(CENTER);
+    img.filter[BLUR, 12]
     //BOUNCING BALLS
     /*Create a for loop that iterates through i until it reaches the ball count value
     Inside the for loop:
@@ -39,7 +47,7 @@ function setup() {
     set the speeds to be random
     set the size to be random
     set the colors to be random
-    TRANSFERRED CODE TO DRAW
+    TRANSFERRED CODE TO DRAW, seems required
     for(let i = 0; i < ballCount; i++) {
         x[i] = width / 2;
         y[i] = height / 2;
@@ -61,6 +69,9 @@ function setup() {
 // P5JS FUNCTION DRAW. this works. 
 function draw() {
     background(0)
+    // loading image as background messes up the code and everything goes black. even without loading any images previously. 
+    image(abc, 0, 0, width/8, height/8)
+
     // ORANGE AND BLUE TEST BALLS
     noStroke();
     fill('blue')
