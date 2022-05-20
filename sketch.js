@@ -1,8 +1,3 @@
-/*I have no idea where these 2 lines came from
-const { LoopOnce } = require("three");
-const { NoColorSpace } = require("three");
-*/
-
 // TEST BALLS
 let aPos = 0;
 let aSpeed = 5;
@@ -17,7 +12,7 @@ let ySpeed = [];
 let r = [];
 let g = [];
 let b = [];
-let size = [];
+let ballSize = [];
 
 
 // AUDIOVISUALIZER - load song works
@@ -93,7 +88,7 @@ function draw() {
         let r = [];
         let g = [];
         let b = [];
-        let size = [];
+        let ballSize = [];
 
         //
 
@@ -101,7 +96,7 @@ function draw() {
         y[i] = height / 2;
         xSpeed[i] = random(-5,20);
         ySpeed[i] = random(-5,20);
-        size[i] = random(10,50);
+        ballSize[i] = random(10,50);
         r[i] = random(0, 256);
         g[i] = random(0, 256);
         b[i] = random(0, 256);
@@ -117,7 +112,7 @@ function draw() {
         };
         fill(r[i], g[i], b[i]);
         noStroke();
-        ellipse(x[i], y[i], size[i], size[i]);
+        ellipse(x[i], y[i], ballSize[i], ballSize[i]);
     }
     // the code is not the problem. p5js draw should be refreshing 60fps and it's not. 
 
