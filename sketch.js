@@ -1,5 +1,7 @@
-console.log="script file loaded"
-
+window.onload = function () {
+    console.log="script file loaded"
+}
+/*
 // load song
 var song
 
@@ -39,3 +41,4 @@ function mouseClicked() {
         song.play()
     }
 }
+*/
