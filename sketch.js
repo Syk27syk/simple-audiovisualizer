@@ -1,9 +1,11 @@
-const song = new Audio('/on_good_terms.mp3')
+var song = new Audio('/on_good_terms.mp3')
+song.play();
 
 //this doesn't work -- p5.SoundFile = '/on_good_terms.mp3'
 
 // p5js function setup
 function setup() {
+    getAudioContext().suspend();
     createCanvas(windowWidth, windowHeight);
     // fast fourier transform object to return array of values for each point of time analyzed
     //fft = new p5.FFT()
@@ -12,8 +14,8 @@ function setup() {
 // p5js function draw
 function draw() {
     background(0)
-}
-/*
+
+
     // create variable to store waveform data from fft. calling fft.waveform returns an array with 1024 elements in chrome dev tools
     var wave = fft.waveform()
 
@@ -27,13 +29,9 @@ function draw() {
        //point (x,y)
     }
 }
-*/
+
 // play song
 function mousePressed() {
-    if (song.isPlaying()) {
-        song.stop();
-    } else {
-        song.play();
-    }
+    userStartAudio();
 }
 
