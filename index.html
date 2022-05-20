@@ -6,22 +6,30 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>simple-audiovisualizer with p5js</title>
         <link rel="stylesheet" href="style.css">
-        <script src="/script.js" defer></script>
+        <!--
+        <script> var loaded = false; </script>
+        <script src="/script.js" defer onload="loaded=true;"></script>
+        -->
     </head>
     <body>
-        <canvas id="canvas" width="viewport" height ="viewport">
+        <!---
+        <canvas id="canvas" width="1200px" height ="1200px">
             <style>
                 #canvas {
                     background-color: rgb(0,0,0);
+                    z-index: 0;
+                    position: fixed;
                 }
             </style>
         </canvas>
-        <h1 class="mx-auto"> Hello World </h1>
-        <script src="/script.js"></script>
+    -->
+        <h1 class="font-bold border border-black"> Hello World </h1>
+        <!--<script src="/script.js"></script>-->
     </body>
 </html>
 
 <script>
+onload
 var song
 
 function preload() {

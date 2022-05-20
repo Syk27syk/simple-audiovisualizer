@@ -9,6 +9,7 @@ h1 {
 	font-size: 75px;
     font-family: helvetica;
     text-align: center;
-    color: black;
+    color: rgb(175,175,175);
     padding: 50px;
+    z-index: 10;
 }
