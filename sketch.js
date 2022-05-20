@@ -66,6 +66,28 @@ function draw() {
     - draw balls
     */
     for(let i = 0; i < ballCount; i++) {
+        let ballCount = 100;
+        let x = [];
+        let y = [];
+        let xSpeed = [];
+        let ySpeed = [];
+        let r = [];
+        let g = [];
+        let b = [];
+        let size = [];
+
+        //
+
+        x[i] = width / 2;
+        y[i] = height / 2;
+        xSpeed[i] = random(-5,5);
+        ySpeed[i] = random(-5,5);
+        size[i] = random(10,50);
+        r[i] = random(0, 256);
+        g[i] = random(0, 256);
+        b[i] = random(0, 256);
+        
+        //
         x[i] += xSpeed[i];
         y[i] += ySpeed[i];
         if(x[i] < 0 || x[i] > width) {
