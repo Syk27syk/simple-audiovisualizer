@@ -1,5 +1,7 @@
+/*I have no idea where these 2 lines came from
 const { LoopOnce } = require("three");
 const { NoColorSpace } = require("three");
+*/
 
 // TEST BALLS
 let aPos = 0;
@@ -163,6 +165,9 @@ function draw() {
     }
     endShape()
     */
+
+    // AUDIOVISUALIZER - PARTICLES
+
 
 }
 
