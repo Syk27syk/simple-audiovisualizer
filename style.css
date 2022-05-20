@@ -30,14 +30,15 @@ footer, header, nav, section, video {
 	}
 	
 	/* ensures that older browsers will display HTML5 elements correctly */
-	/*
+
 h1 {
-	font-size: 200px;
+	font-size: 75px;
     font-family: helvetica;
+    text-align: center;
     color: black;
     padding: 50px;
 }
-*/
+
 	/* begins to set up font sizes relative to base rem – h1 has been used as an example */
 	
 p { 

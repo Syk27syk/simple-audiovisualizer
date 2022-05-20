@@ -1,3 +1,9 @@
+var song
+
+function preload() {
+    song = loadSound('/ongoodterms.mp3')
+}
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
 
@@ -6,4 +12,12 @@ function setup() {
 function draw() {
     background(0)
 
+}
+
+function mouseClicked() {
+    if (song.isPlaying()) {
+        song.pause()
+    } else {
+        song.play()
+    }
 }
