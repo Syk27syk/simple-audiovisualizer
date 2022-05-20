@@ -50,33 +50,34 @@ function setup() {
 // P5JS FUNCTION DRAW. this works. 
 function draw() {
     background(0)
-    // ORANGE TEST BALL 
+    // ORANGE AND BLUE TEST BALLS
     noStroke();
+    fill('blue')
+    ellipse(width/2, height/2, 150,150)
     fill('#FF8C00')
     ellipse(width/2, height/2, 100,100)
-  
+
+    // BOUNCING BALLS
     /*Iterate through a new for loop to change the properties in order to animate the balls
     Inside the for loop:
-    increment the speed for x position, y position;
-    reverse x direction if ball hits left or right sides,
-    reverse y direction if ball hits top or bottom sides;
-    set random R, G, B values,
-    style to have no strokes,
-    draw balls
+    - increment the speed for x position, y position;
+    - reverse x direction if ball hits left or right sides, reverse y direction if ball hits top or bottom sides;
+    - set random R, G, B values; style to have no strokes;
+    - draw balls
     */
-   for(let i = 0; i < ballCount; i++) {
-    x[i] += xSpeed[i];
-    y[i] += ySpeed[i];
-  if(x[i] < 0 || x[i] > width) {
-    xSpeed[i] *= -1;
-  }
-  if(y[i] < 0 || y[i] > width) {
-    ySpeed[i] *= -1;
-  }
-    fill(r[i], g[i], b[i]);
-    noStroke();
-    ellipse(x[i], y[i], size[i], size[i]);
-  }
+    for(let i = 0; i < ballCount; i++) {
+        x[i] += xSpeed[i];
+        y[i] += ySpeed[i];
+        if(x[i] < 0 || x[i] > width) {
+            xSpeed[i] *= -1;
+        };
+        if(y[i] < 0 || y[i] > width) {
+            ySpeed[i] *= -1;
+        };
+        fill(r[i], g[i], b[i]);
+        noStroke();
+        ellipse(x[i], y[i], size[i], size[i]);
+    }
 
   // AUDIOVISUALIZER
     // create variable to store waveform data from fft. calling fft.waveform returns an array with 1024 elements in chrome dev tools
