@@ -6,8 +6,10 @@ window.onload = function () {
 */
 
 // load song
-var song = new Audio('/on_good_terms.mp3')
-song.play();
+
+//this doesn't work
+p5.SoundFile = '/on_good_terms.mp3'
+
 
 // p5js function setup
 function setup() {
@@ -36,11 +38,11 @@ function draw() {
 }
 */
 // play song
-function mouseClicked() {
+function mousePressed() {
     if (song.isPlaying()) {
-        song.pause()
+        song.stop();
     } else {
-        song.play()
+        song.play();
     }
 }
 
