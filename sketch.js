@@ -6,10 +6,9 @@ window.onload = function () {
 */
 
 // load song
+var song = new Audio('/on_good_terms.mp3')
 
-//this doesn't work
-p5.SoundFile = '/on_good_terms.mp3'
-
+//this doesn't work -- p5.SoundFile = '/on_good_terms.mp3'
 
 // p5js function setup
 function setup() {
