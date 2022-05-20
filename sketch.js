@@ -2,23 +2,27 @@ window.onload = function () {
     console.log="script file loaded"
 }
 
+/*
 // load song
 var song
 
 function preload() {
     song = new Audio('/on_good_terms.mp3')
 }
+*/
 
 // p5js function setup
 function setup() {
     createCanvas(windowWidth, windowHeight);
     // fast fourier transform object to return array of values for each point of time analyzed
-    fft = new p5.FFT()
+    //fft = new p5.FFT()
 }
 
 // p5js function draw
 function draw() {
     background(0)
+}
+/*
     // create variable to store waveform data from fft. calling fft.waveform returns an array with 1024 elements in chrome dev tools
     var wave = fft.waveform()
 
@@ -41,3 +45,4 @@ function mouseClicked() {
         song.play()
     }
 }
+*/
