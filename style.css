@@ -1,6 +1,10 @@
 /*
 from: http://thenewcode.com/441/HTML5-CSS-Boilerplate#:~:text=%E2%80%9CBoilerplate%E2%80%9D%20is%20any%20text%20that,Boilerplate%20is%20a%20good%20example. 
 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * { 
 	box-sizing: border-box;
 }
