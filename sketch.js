@@ -1,5 +1,3 @@
-const { ImageBitmapLoader } = require("three");
-
 // TEST BALLS
 let aPos = 0;
 let aSpeed = 5;
@@ -39,7 +37,9 @@ function setup() {
     frameRate(60);
     angleMode(DEGREES);
     imageMode(CENTER);
-    img.filter[BLUR, 12]
+    // this line causes the entire canvas to white out
+    // img.filter[BLUR, 12]
+    
     //BOUNCING BALLS
     /*Create a for loop that iterates through i until it reaches the ball count value
     Inside the for loop:
@@ -70,7 +70,7 @@ function setup() {
 function draw() {
     background(0)
     // loading image as background messes up the code and everything goes black. even without loading any images previously. 
-    image(abc, 0, 0, width/8, height/8)
+    // image(abc, 0, 0, width/8, height/8)
 
     // ORANGE AND BLUE TEST BALLS
     noStroke();
